@@ -231,8 +231,8 @@ console.log(15, ageClassification(150) === null);
 // console.log(oddFn(20)); // [1, 3, 5, 7, 9, 11, 13, 15, 17, 19]
 
 function oddFn(n) {
-  let a = []
-  let i = 0
+  var a = []
+  var i = 0
   while (i++ < n) {
     if (i % 2 !== 0) {
       a.push(i)
@@ -254,7 +254,7 @@ console.log(oddFn(10));
  */
 
 function mainFunc(a, b, func) {
-  if (func && typeof func === 'function') {
+  if (typeof func === 'function') {
     return func(a, b)
   } return false
 }
