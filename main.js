@@ -131,23 +131,23 @@ function weekFn(n) {
       break;
     case 7: weeksName = 'Воскресенье';
       break;
-    default: weeksName = 'null'
+    default: weeksName = null
   }
   return weeksName
 }
 
-console.log('swiitch case', weekFn(3));
-// console.log(weekFn(1)); // 'Понедельник'
+console.log(weekFn(3));
+console.log(weekFn(1)); // 'Понедельник'
 
-// console.log(weekFn(3)); // 'Среда'
+console.log(weekFn(3)); // 'Среда'
 
-// console.log(weekFn(7)); // 'Воскресенье'
+console.log(weekFn(7)); // 'Воскресенье'
 
-// console.log(weekFn(9)); // null
+console.log(weekFn(9)); // null
 
-// console.log(weekFn(1.5)); // null
+console.log(weekFn(1.5)); // null
 
-// console.log(weekFn('2')); // null
+console.log(weekFn('2')); // null
 
 /*
  * #6
@@ -230,6 +230,17 @@ console.log(15, ageClassification(150) === null);
 
 // console.log(oddFn(20)); // [1, 3, 5, 7, 9, 11, 13, 15, 17, 19]
 
+function oddFn(n) {
+  let a = []
+  let i = 0
+  while (i++ < n) {
+    if (i % 2 !== 0) {
+      a.push(i)
+    }
+  }
+  return a
+}
+console.log(oddFn(10));
 /*
  * #8
  *
@@ -242,6 +253,11 @@ console.log(15, ageClassification(150) === null);
  *
  */
 
+function mainFunc(a, b, func) {
+  if (func && typeof func === 'function') {
+    return func(a, b)
+  } return false
+}
 /*
  * реализуйте следующие функции, которые будут осуществлять механизм callback в основной функции,
  * возвращая ей результат собственного вычисления...
@@ -249,11 +265,17 @@ console.log(15, ageClassification(150) === null);
  */
 
 // cbRandom(a, b) – вычисляет и возвращает произвольное целое число в диапазоне между a и b включительно.
-
+function cbRandom(c, d) {
+  return Math.floor(Math.random() * (d - c + 1)) + c
+}
 // cbPow(a, b) – вычисляет и возвращает результат возведения числа a в степень b.
-
+function cbPow(num, pow) {
+  return Math.pow(num, pow)
+}
 // cbAdd(a, b) – вычисляет и возвращает сумму двух чисел a и b.
-
+function cbAdd(a, b) {
+  return a + b
+}
 /*
  * mainFunc() должна возвращать результат работы переданной ей возвратной функции, например:
  * mainFunc(2, 5, cbRandom) → случайно от 2 до 5 включительно
